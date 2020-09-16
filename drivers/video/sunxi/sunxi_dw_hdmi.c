@@ -398,6 +398,8 @@ U_BOOT_DRIVER(sunxi_dw_hdmi) = {
 	.priv_auto_alloc_size = sizeof(struct sunxi_dw_hdmi_priv),
 };
 
+#ifndef CONFIG_MACH_SUN8I_V3S
 U_BOOT_DEVICE(sunxi_dw_hdmi) = {
 	.name = "sunxi_dw_hdmi"
 };
+#endif

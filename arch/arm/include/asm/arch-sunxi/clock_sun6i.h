@@ -329,7 +329,7 @@ struct sunxi_ccm_reg {
 #define AHB_GATE_OFFSET_DE		12
 #define AHB_GATE_OFFSET_HDMI		11
 #define AHB_GATE_OFFSET_TVE		9
-#ifndef CONFIG_SUNXI_DE2
+#if !defined CONFIG_SUNXI_DE2 || defined CONFIG_MACH_SUN8I_V3S
 #define AHB_GATE_OFFSET_LCD1		5
 #define AHB_GATE_OFFSET_LCD0		4
 #else
@@ -476,7 +476,7 @@ struct sunxi_ccm_reg {
 #define AHB_RESET_OFFSET_HDMI		11
 #define AHB_RESET_OFFSET_HDMI2		10
 #define AHB_RESET_OFFSET_TVE		9
-#ifndef CONFIG_SUNXI_DE2
+#if !defined CONFIG_SUNXI_DE2 || defined CONFIG_MACH_SUN8I_V3S
 #define AHB_RESET_OFFSET_LCD1		5
 #define AHB_RESET_OFFSET_LCD0		4
 #else
@@ -510,6 +510,7 @@ struct sunxi_ccm_reg {
 #define CCM_DE2_CTRL_PLL_MASK		(3 << 24)
 #define CCM_DE2_CTRL_PLL6_2X		(0 << 24)
 #define CCM_DE2_CTRL_PLL10		(1 << 24)
+#define CCM_DE2_CTRL_PLL3_V3S		(0 << 24)
 #define CCM_DE2_CTRL_GATE		(0x1 << 31)
 
 /* CCU security switch, H3 only */
